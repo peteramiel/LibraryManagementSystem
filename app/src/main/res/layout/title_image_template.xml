@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150sp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="10sp"
+    >
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="120sp"
+        android:src="@drawable/sample_book"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Out of the Box by Suzanne Dudley"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="12sp"
+        android:textColor="@color/colorWhite"
+        />
+
+</LinearLayout>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorDarkViolet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <android.support.v7.widget.CardView
+            android:layout_marginTop="30sp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:id="@+id/pictureProfileCardView"
+            app:cardCornerRadius="70dp"
+            android:layout_centerHorizontal="true"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="1.9">
+            <ImageView
+                android:layout_height="140dp"
+                android:layout_width="match_parent"
+                android:id="@+id/pictureProfileImageView"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true">
+            </ImageView>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pictureProfileCardView"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            >
+
+            <TextView
+                android:id="@+id/userNameProfileTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_name"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/userTypeProfileTextView"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_type"
+                android:textColor="@color/colorWhiteTransparent"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/userProgramProfileTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="5dp"
+                android:text="@string/user_program"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/userNumberProfileTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="5dp"
+                android:text="@string/user_number"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/contactNumberProfileTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="5dp"
+                android:text="@string/contact_number"
+                android:textSize="18sp"
+                />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorLightViolet"
+                    >
+                    <TextView
+                        android:id="@+id/unreturnedTitleProfileTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/unreturned_books"
+                        android:drawableStart="@drawable/outline_unreturned_books_white_50sp"
+                        android:drawablePadding="5sp"
+                        android:drawableTint="@color/colorWhiteTransparent"
+                        android:textColor="@color/colorWhiteTransparent"
+                        android:textSize="22sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/unreturnedBooksNumberProfileTextView"
+                        android:layout_alignParentRight="true"
+                        android:textSize="22sp"
+                        android:layout_marginTop="5sp"
+                        android:text="[2]"
+                        android:layout_marginRight="10sp"
+                        android:textColor="@color/colorWhiteTransparent"
+                        />
+                    <ListView
+                        android:layout_below="@+id/unreturnedTitleProfileTextView"
+                        android:id="@+id/unreturnedBooksProfileListView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"/>
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                android:background="@color/colorWhiteTransparent"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/colorLightViolet">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/borrowed_books"
+                        android:drawableTint="@color/colorWhiteTransparent"
+                        android:drawableStart="@drawable/outline_borrowed_books_white_50sp"
+                        android:drawablePadding="5sp"
+                        android:textColor="@color/colorWhiteTransparent"
+                        android:textSize="22sp" />
+                    <ListView
+                        android:id="@+id/borrowedBooksProfileListView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <Button
+                android:id="@+id/logoutProfileButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:padding="10sp"
+                android:text="@string/logout"
+                />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

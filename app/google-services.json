@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "549983071560",
+    "firebase_url": "https://librarymanagementsystem-7c1ac.firebaseio.com",
+    "project_id": "librarymanagementsystem-7c1ac",
+    "storage_bucket": "librarymanagementsystem-7c1ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549983071560:android:f69d5904a75e8285",
+        "android_client_info": {
+          "package_name": "plm.librarymanagementsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549983071560-bb6cc4qfp4n87shtqu6qb06ru88uiccm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "plm.librarymanagementsystem",
+            "certificate_hash": "adb70314ff3c4743aba95c34c26345da66c0da37"
+          }
+        },
+        {
+          "client_id": "549983071560-k7o1daut42bgdv9plrbn8j3ad3osppl9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCUbS5eVLW8ZGWrEx1SuPSz5JZWIYzoSg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549983071560-k7o1daut42bgdv9plrbn8j3ad3osppl9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
