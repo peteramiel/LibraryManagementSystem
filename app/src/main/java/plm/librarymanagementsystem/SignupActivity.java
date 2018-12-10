@@ -14,6 +14,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,10 +39,17 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
     private EditText passwordEditText;
     private EditText retypePasswordEditText;
     private EditText userNameEditText;
+    private EditText userNumberEditText;
+    private EditText contactNumberEditText;
+    private EditText userProgramEditText;
     private TextInputLayout emailWrapper;
     private TextInputLayout passwordWrapper;
     private TextInputLayout userNameWrapper;
     private TextInputLayout retypePasswordWrapper;
+    private TextInputLayout userNumberWrapper;
+    private TextInputLayout contactNumberWrapper;
+    private TextInputLayout userProgramWrapper;
+    private Spinner userTypeSpinner;
     private FirebaseAuth mAuth;
     private String userId;
     private StorageReference mStorageRef;
@@ -56,10 +64,19 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
         emailEditText = findViewById(R.id.emailSignUpEditText);
         passwordEditText = findViewById(R.id.passwordSignUpEditText);
         retypePasswordEditText = findViewById(R.id.retypePasswordSignUpEditText);
+        userNumberEditText =  findViewById(R.id.userNumberSignUpEditText);
+        contactNumberEditText = findViewById(R.id.contactNumberSignUpEditText);
+        userProgramEditText = findViewById(R.id.userProgramSignUpEditText);
+        userNumberWrapper = findViewById(R.id.userNumberSignUpWrapper);
+        contactNumberWrapper = findViewById(R.id.contactNumberSignUpWrapper);
+        userProgramWrapper = findViewById(R.id.userProgramSignUpWrapper);
         userNameWrapper = findViewById(R.id.userNameSignUpWrapper);
         emailWrapper = findViewById(R.id.emailSignUpWrapper);
         passwordWrapper = findViewById(R.id.passwordSignUpWrapper);
         retypePasswordWrapper = findViewById(R.id.retypePasswordSignUpWrapper);
+
+        userTypeSpinner = findViewById(R.id.userTypeSignupSpinner);
+
         //BUTTONS
         findViewById(R.id.signUpSignUpButton).setOnClickListener(this);
         findViewById(R.id.backSignUpButton).setOnClickListener(this);
@@ -72,6 +89,10 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
     private boolean validateForm() {
         boolean valid = true;
 
+        String userType = String.valueOf(userTypeSpinner.getSelectedItem());
+        if (TextUtils.isEmpty(userType) || userType.equals(R.string.user_type_prompt)){
+            Toast.makeText(getApplicationContext(), "Invalid User Type", Toast.LENGTH_SHORT).show();
+        }
         String email = emailEditText.getText().toString();
         if (TextUtils.isEmpty(email)) {
             emailWrapper.setError("Required");
@@ -79,8 +100,8 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
         } else {
             emailWrapper.setError(null);
         }
-        String company = userNameEditText.getText().toString();
-        if (TextUtils.isEmpty(company)) {
+        String name = userNameEditText.getText().toString();
+        if (TextUtils.isEmpty(name)) {
             userNameWrapper.setError("Required");
             valid = false;
         } else {
@@ -104,6 +125,30 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
         if (!password.equals(retypePassword)) {
             retypePasswordWrapper.setError("Passwords do not match. Please enter your desired password again");
             valid = false;
+        }
+
+        String userNumber = userNumberEditText.getText().toString();
+        if (TextUtils.isEmpty(userNumber)) {
+            userNumberWrapper.setError("Required");
+            valid = false;
+        } else {
+            userNumberWrapper.setError(null);
+        }
+
+        String contactNumber = contactNumberEditText.getText().toString();
+        if (TextUtils.isEmpty(contactNumber)) {
+            contactNumberWrapper.setError("Required");
+            valid = false;
+        } else {
+            contactNumberWrapper.setError(null);
+        }
+
+        String userProgram = userProgramEditText.getText().toString();
+        if (TextUtils.isEmpty(userProgram)) {
+            userProgramWrapper.setError("Required");
+            valid = false;
+        } else {
+            userProgramWrapper.setError(null);
         }
 
         return valid;
@@ -162,10 +207,10 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
                             Log.d(TAG,"Setting up account");
                             DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("User");
                             String userName = userNameEditText.getText().toString();
-                            String userType = "Not Set";
-                            String userNumber = "Not Set";
-                            String userProgram = "Not Set";
-                            String contactNumber = "Not Set";
+                            String userType = String.valueOf(userTypeSpinner.getSelectedItem());
+                            String userNumber = userNumberEditText.getText().toString();
+                            String userProgram = userProgramEditText.getText().toString();
+                            String contactNumber = contactNumberEditText.getText().toString();
                             User user = new User(userName,userType,userNumber,userProgram,contactNumber);
                             myRef.child(userId).setValue(user);
 

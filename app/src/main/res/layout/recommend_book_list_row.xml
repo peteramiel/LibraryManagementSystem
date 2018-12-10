@@ -13,7 +13,9 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/imageBookListRow"
         android:layout_width="80sp"
-        android:layout_height="100sp" />
+        android:layout_height="100sp"
+        android:src="@drawable/sample_book"
+        />
     <TextView
         android:layout_below="@+id/imageBookListRow"
         android:id="@+id/titleBookListRow"

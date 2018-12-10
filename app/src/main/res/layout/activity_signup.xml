@@ -58,9 +58,7 @@
                     android:src="@drawable/no_image"
                     app:civ_border_color="#EEEEEE"
                     app:civ_border_width="2dp"
-                    app:civ_shadow="true"
-                    app:civ_shadow_color="#8BC34A"
-                    app:civ_shadow_radius="10" />
+                  />
 
 
                 <TextView
@@ -107,22 +105,13 @@
                         android:maxLength="30" />
                 </android.support.design.widget.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/userTypeSignUpWrapper"
+                <Spinner
+                    android:id="@+id/userTypeSignupSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="8dp"
-                    app:errorEnabled="true">
-
-                    <EditText
-                        android:id="@+id/userTypeSignUpEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="User Type"
-                        android:inputType="text"
-                        android:maxLength="30" />
-                </android.support.design.widget.TextInputLayout>
+                    android:prompt="@string/user_type_prompt"
+                    android:entries="@array/user_types"
+                    />
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/userNumberSignUpWrapper"

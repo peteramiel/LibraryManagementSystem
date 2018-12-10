@@ -1,5 +1,6 @@
 package plm.librarymanagementsystem;
 
+import android.content.Context;
 import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,22 +13,27 @@ import android.widget.TextView;
 import java.util.List;
 
 public class RecommendBooksAdapter extends RecyclerView.Adapter<RecommendBooksAdapter.MyViewHolder>{
+
+    private Context context;
     private List<Books> booksList;
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View itemView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.recommend_book_list_row, viewGroup, false);
-
-        return new MyViewHolder(itemView);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View itemView = inflater.inflate(R.layout.book_item_home, null, false);
+        MyViewHolder viewHolder = new MyViewHolder(itemView);
+        viewHolder.image = (ImageView) itemView.findViewById(R.id.bookHomeImageView);
+        viewHolder.title = (TextView) itemView.findViewById(R.id.bookTitleHomeTextView);
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        Books book = booksList.get(i);
-        myViewHolder.title.setText(String.format("%s by %s", book.getBookTitle(), book.getBookAuthor()));
-        myViewHolder.image.setImageResource(R.drawable.baseline_bookmarks_white_24dp);
+        ImageView bookImageView = (ImageView) myViewHolder.image;
+        bookImageView.setImageResource(R.drawable.sample_book);
+        myViewHolder.title.setText(String.format("%s by %s", booksList.get(i).getBookTitle(), booksList.get(i).getBookAuthor()));
+
     }
 
     @Override
@@ -47,7 +53,8 @@ public class RecommendBooksAdapter extends RecyclerView.Adapter<RecommendBooksAd
         }
     }
 
-    public RecommendBooksAdapter(List<Books> booksList) {
+    public RecommendBooksAdapter(Context context,List<Books> booksList) {
+        this.context = context;
         this.booksList = booksList;
     }
 

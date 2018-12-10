@@ -84,6 +84,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     //Check if user is verified
                     if(!user.isEmailVerified()){
                         mAuth.signOut();
+                        hideProgressDialog();
+                        Toast.makeText(getApplicationContext(), "Email Not Verified", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     signInSuccessful();
