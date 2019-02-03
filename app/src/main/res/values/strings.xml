@@ -33,6 +33,7 @@
         <item>Faculty</item>
         <item>Graduate School</item>
     </string-array>
+    <string name="SERVER_IP">192.168.1.5</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

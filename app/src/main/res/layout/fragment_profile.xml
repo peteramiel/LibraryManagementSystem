@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorDarkViolet"
+    android:background="@drawable/back"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
@@ -48,6 +48,7 @@
                 android:text="@string/user_name"
                 android:gravity="center"
                 android:textColor="@color/colorWhite"
+                android:fontFamily="@font/stentiga"
                 android:textSize="18sp"
                 android:textStyle="bold" />
             <TextView
@@ -56,8 +57,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/user_type"
+                android:fontFamily="@font/alegreya"
                 android:textColor="@color/colorWhiteTransparent"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 />
 
             <TextView
@@ -67,7 +69,8 @@
                 android:textColor="@color/colorWhite"
                 android:layout_marginTop="5dp"
                 android:text="@string/user_program"
-                android:textSize="18sp"
+                android:fontFamily="@font/alegreya"
+                android:textSize="22sp"
                 />
             <TextView
                 android:id="@+id/userNumberProfileTextView"
@@ -76,7 +79,8 @@
                 android:textColor="@color/colorWhite"
                 android:layout_marginTop="5dp"
                 android:text="@string/user_number"
-                android:textSize="18sp"
+                android:fontFamily="@font/alegreya"
+                android:textSize="22sp"
                 />
             <TextView
                 android:id="@+id/contactNumberProfileTextView"
@@ -85,7 +89,8 @@
                 android:textColor="@color/colorWhite"
                 android:layout_marginTop="5dp"
                 android:text="@string/contact_number"
-                android:textSize="18sp"
+                android:fontFamily="@font/alegreya"
+                android:textSize="22sp"
                 />
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -97,7 +102,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorLightViolet"
+                    android:background="@color/colorWhite"
                     >
                     <TextView
                         android:id="@+id/unreturnedTitleProfileTextView"
@@ -107,8 +112,9 @@
                         android:text="@string/unreturned_books"
                         android:drawableStart="@drawable/outline_unreturned_books_white_50sp"
                         android:drawablePadding="5sp"
-                        android:drawableTint="@color/colorWhiteTransparent"
-                        android:textColor="@color/colorWhiteTransparent"
+                        android:drawableTint="#000000"
+                        android:fontFamily="@font/coda"
+                        android:textColor="#000000"
                         android:textSize="22sp" />
                     <TextView
                         android:layout_width="wrap_content"
@@ -118,8 +124,9 @@
                         android:textSize="22sp"
                         android:layout_marginTop="5sp"
                         android:text="[2]"
+                        android:fontFamily="@font/coda"
                         android:layout_marginRight="10sp"
-                        android:textColor="@color/colorWhiteTransparent"
+                        android:textColor="#000000"
                         />
                     <ListView
                         android:layout_below="@+id/unreturnedTitleProfileTextView"
@@ -143,16 +150,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:background="@color/colorLightViolet">
+                    android:background="@color/colorWhite">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="@string/borrowed_books"
-                        android:drawableTint="@color/colorWhiteTransparent"
+                        android:drawableTint="#000000"
                         android:drawableStart="@drawable/outline_borrowed_books_white_50sp"
                         android:drawablePadding="5sp"
-                        android:textColor="@color/colorWhiteTransparent"
+                        android:fontFamily="@font/coda"
+                        android:textColor="#000000"
                         android:textSize="22sp" />
                     <ListView
                         android:id="@+id/borrowedBooksProfileListView"
@@ -172,6 +180,9 @@
                 android:layout_margin="10sp"
                 android:padding="10sp"
                 android:text="@string/logout"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/stentiga"
+                android:background="@drawable/rounded_button_blue"
                 />
 
 

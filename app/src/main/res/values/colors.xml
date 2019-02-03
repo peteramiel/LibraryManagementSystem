@@ -9,4 +9,7 @@
     <color name="colorWhiteTransparent">#80FFFFFF</color>
     <color name="colorDarkViolet">#1C1028</color>
     <color name="colorLightViolet">#251B33</color>
+    <color name="colorDarkBLue">#3d46c3</color>
+    <color name="colorCharcoal">#41464f</color>
+    <color name="colorGray">#D7DEE8</color>
 </resources>

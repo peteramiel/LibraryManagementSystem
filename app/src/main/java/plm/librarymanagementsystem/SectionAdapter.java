@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.DataSetObserver;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -115,6 +116,8 @@ public class SectionAdapter implements ExpandableListAdapter {
 
         RecommendBooksAdapter horizontalListAdapter = new RecommendBooksAdapter(context, section.get(groupPosition).books);
         childHolder.horizontalListView.setAdapter(horizontalListAdapter);
+
+
 
         return convertView;
     }

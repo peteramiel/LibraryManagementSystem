@@ -14,7 +14,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="@color/colorGray"
         android:clickable="true"
         android:focusable="true"
         android:orientation="vertical"
@@ -23,9 +23,10 @@
             android:id="@+id/contentNewsListRowTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorWhite"
-            android:textSize="16sp"
+            android:textColor="#000000"
+            android:textSize="18sp"
             android:text="Insert Some Text Here"
+            android:fontFamily="@font/alegreya"
             />
         <ImageView
             android:id="@+id/attachmentNewsListRowImageView"
@@ -36,13 +37,14 @@
             android:scaleType="fitXY"
             />
         <TextView
-            android:textColor="@color/colorWhiteTransparent"
+            android:textColor="#000000"
             android:id="@+id/datePostedNewsListRowTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:layout_below="@id/attachmentNewsListRowImageView"
             android:text="Insert Date Here"
+            android:fontFamily="@font/coda"
             />
     </RelativeLayout>
 

@@ -1,30 +1,44 @@
 package plm.librarymanagementsystem;
 
 public class Books {
-    private String callNumber;
-    private String bookTitle;
+    private String available;
     private String bookAuthor;
+    private String bookTitle;
+    private String callNumber;
     private String location;
     private String publishDate;
     private String series;
-    private String available;
+    private String uniqueId;
+    private String shelfPosition;
+    private String shelfLayer;
 
-    public Books(String callNumber, String bookTitle, String bookAuthor, String location, String publishDate, String series, String available) {
-        this.callNumber = callNumber;
-        this.bookTitle = bookTitle;
+    public Books(String available, String bookAuthor, String bookTitle, String callNumber, String location, String publishDate, String series, String uniqueId, String shelfPosition, String shelfLayer) {
+        this.available = available;
         this.bookAuthor = bookAuthor;
+        this.bookTitle = bookTitle;
+        this.callNumber = callNumber;
         this.location = location;
         this.publishDate = publishDate;
         this.series = series;
+        this.uniqueId = uniqueId;
+        this.shelfPosition = shelfPosition;
+        this.shelfLayer = shelfLayer;
+    }
+
+    public String getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(String available) {
         this.available = available;
     }
 
-    public String getCallNumber() {
-        return callNumber;
+    public String getBookAuthor() {
+        return bookAuthor;
     }
 
-    public void setCallNumber(String callNumber) {
-        this.callNumber = callNumber;
+    public void setBookAuthor(String bookAuthor) {
+        this.bookAuthor = bookAuthor;
     }
 
     public String getBookTitle() {
@@ -35,12 +49,12 @@ public class Books {
         this.bookTitle = bookTitle;
     }
 
-    public String getBookAuthor() {
-        return bookAuthor;
+    public String getCallNumber() {
+        return callNumber;
     }
 
-    public void setBookAuthor(String bookAuthor) {
-        this.bookAuthor = bookAuthor;
+    public void setCallNumber(String callNumber) {
+        this.callNumber = callNumber;
     }
 
     public String getLocation() {
@@ -67,12 +81,28 @@ public class Books {
         this.series = series;
     }
 
-    public String getAvailable() {
-        return available;
+    public String getUniqueId() {
+        return uniqueId;
     }
 
-    public void setAvailable(String available) {
-        this.available = available;
+    public void setUniqueId(String uniqueId) {
+        this.uniqueId = uniqueId;
+    }
+
+    public String getShelfPosition() {
+        return shelfPosition;
+    }
+
+    public void setShelfPosition(String shelfPosition) {
+        this.shelfPosition = shelfPosition;
+    }
+
+    public String getShelfLayer() {
+        return shelfLayer;
+    }
+
+    public void setShelfLayer(String shelfLayer) {
+        this.shelfLayer = shelfLayer;
     }
 
     public Books() {

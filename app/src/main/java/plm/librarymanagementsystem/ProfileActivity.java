@@ -64,34 +64,34 @@ public class ProfileActivity extends BaseActivity implements View.OnClickListene
         borrowedBooks.setAdapter(arrayAdapterBorrowed);
         unreturnedBooks.setAdapter(arrayAdapterUnreturned);
         findViewById(R.id.logoutProfileButton).setOnClickListener(this);
-        getUserData();
+//        getUserData();
     }
 
-    private void getUserData() {
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        String userID = user.getUid().toString();
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("User").child(userID);
-
-        // Attach a listener to read the data at our posts reference
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                userNameTextView.setText(user.getUserName());
-                userTypeTextView.setText(user.getUserType());
-                userProgramTextView.setText(user.getUserProgram());
-                userNumberTextView.setText(user.getUserNumber());
-                contactNumberTextView.setText(user.getContactNumber());
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getCode());
-            }
-        });
-    }
+//    private void getUserData() {
+//        mAuth = FirebaseAuth.getInstance();
+//        FirebaseUser user = mAuth.getCurrentUser();
+//        String userID = user.getUid().toString();
+//        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("User").child(userID);
+//
+//        // Attach a listener to read the data at our posts reference
+//        myRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                User user = dataSnapshot.getValue(User.class);
+//                userNameTextView.setText(user.getUserName());
+//                userTypeTextView.setText(user.getUserType());
+//                userProgramTextView.setText(user.getUserProgram());
+//                userNumberTextView.setText(user.getUserNumber());
+//                contactNumberTextView.setText(user.getContactNumber());
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                System.out.println("The read failed: " + databaseError.getCode());
+//            }
+//        });
+//    }
 
     private void logout() {
         showProgressDialog();
